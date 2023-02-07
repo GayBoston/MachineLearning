@@ -6,7 +6,7 @@ def func():
 
 #2
 
-def sum(a,b):
+def summ(a,b):
 	print(a+b)
 
 
@@ -88,7 +88,7 @@ def fact(n):
 		fact *= i
 	print(fact)
 
-fact(120)
+fact(10)
 
 #9
 
@@ -112,3 +112,92 @@ def concatenate(strings):
 strings = ["Hello", "my", "dearest", "friend"]
 print(concatenate(strings))
 
+#11
+
+def first_n_even(n):
+    i = 2
+    count = 0
+    while count < n:
+        yield i
+        i += 2
+        count += 1
+
+for n in first_n_even(10):
+	print(n)
+
+
+#12
+old_list = [1, 6, 34, 2, -5, 3, -5, 2, -5, 2]
+
+new_list = [x for x in old_list if x>0]
+
+print(new_list)
+
+#13
+
+def squares_gen(n):
+    for i in range(1, n + 1):
+        yield i**2
+
+def sum_squares(n):
+	s = 0
+	for i in squares_gen(n):
+		s += i
+	return s
+
+print(sum_squares(15))
+
+#14
+
+old_str = "Hello there my dear friend"
+
+def unique_chars(strings):
+    return {char for string in strings for char in string}
+
+print(unique_chars(old_str.split()))
+
+#15
+
+def square_dict(nums):
+	return({num: num**2 for num in nums})
+
+print(square_dict([1,2,3,4,5,6,7]))
+
+#16
+
+def divisors(n):
+    for i in range(1, n + 1):
+        if n % i == 0:
+            yield i
+
+for divisor in divisors(1000):
+	print(divisor)
+
+
+#17
+
+def specific_letter(strings, letter):
+	return([x for x in strings if x.startswith(letter)])
+
+print(specific_letter("Hello my dear friends I love my mom".split(), "m"))
+
+#18
+# Write a generator expression that computes the dot product of two vectors represented as lists.
+def dot_prod(v1, v2):
+    return(sum(x * y for x, y in zip(v1, v2)))
+
+print(dot_prod([1,4,6],[1,64,2]))
+
+#19
+
+def pal(strings):
+    return {string for string in strings if string == string[::-1]}
+
+print(pal(["hi", "my", "mom", "loves", "racecar", "watching"]))
+
+#20
+
+def even_odd_dict(nums):
+	return({num: num%2==0 for num in nums})
+
+print(even_odd_dict([1,2,3,4,5,6,7]))
