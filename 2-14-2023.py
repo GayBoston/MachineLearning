@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import timeit as ti
 import matplotlib.pyplot as plt
+import sklearn
 
 pengUrl = "https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/inst/extdata/penguins.csv"
 
